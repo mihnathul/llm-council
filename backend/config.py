@@ -5,8 +5,16 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# Provider mode: "openrouter" (default) or "direct"
+PROVIDER_MODE = os.getenv("PROVIDER_MODE", "openrouter")
+
 # OpenRouter API key
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+
+# Direct provider API keys (used when PROVIDER_MODE=direct)
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 
 # Council members - list of OpenRouter model identifiers
 COUNCIL_MODELS = [
